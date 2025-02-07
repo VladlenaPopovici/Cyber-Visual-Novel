@@ -1,0 +1,24 @@
+
+
+@back CommonBG
+@input PlayerName summary:"Enter your name"
+@stop
+@back Location1
+@glitch time:1 power:1
+@char NPC1
+NPC1: Woooow! Hi, {PlayerName}, right?
+
+@despawnAll
+
+@hideAll
+@back Location2
+@glitch time:1 power:1
+@char NPC2 pos:50,-20
+
+NPC2: Hi, sweet {PlayerName}!
+@despawnAll
+
+@hideAll
+@back Location3
+
+{PlayerName}: Yeah, hard day

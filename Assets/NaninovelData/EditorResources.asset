@@ -144,3 +144,69 @@ MonoBehaviour:
     - name: ScriptNavigatorUI
       pathPrefix: UI
       guid: 735d6aa767879aa469134858c5b2f0a7
+  - Id: Scripts
+    Resources:
+    - name: GameScript
+      pathPrefix: Scripts
+      guid: 720779839e93bc942823aa893b17b8c2
+    - name: MainMenuScript
+      pathPrefix: Scripts
+      guid: 2b496d6cee725bd4aa9a8d95423a3af3
+  - Id: Backgrounds/faa5c4cd-4ee3-46cb-9fa6-0698741a8ae9
+    Resources:
+    - name: CommonBG
+      pathPrefix: Backgrounds/MainBackground
+      guid: 4756a38b5eb240442bed5032263cd606
+    - name: street-2
+      pathPrefix: Backgrounds/MainBackground
+      guid: c2e2af4e48bd7b547b7614d893c67859
+    - name: Location1
+      pathPrefix: Backgrounds/MainBackground
+      guid: de68be7b89abdb8429bc3f3067fa918b
+    - name: Location2
+      pathPrefix: Backgrounds/MainBackground
+      guid: 425620c7995d9d5498601f1e57a6f25f
+    - name: Location3
+      pathPrefix: Backgrounds/MainBackground
+      guid: 2ed99c856fa6247489d7c7cad0d065b5
+    - name: alley-17
+      pathPrefix: Backgrounds/MainBackground
+      guid: 04cce16c8a0c9a846918befba7794f0f
+  - Id: Characters/96044317-7c25-4825-af69-0698ef4d9995
+    Resources:
+    - name: NPC1_Idle
+      pathPrefix: Characters/NPC1
+      guid: 7f96c43480caa4049a72182914e8cdc2
+    - name: NPC1_Happy
+      pathPrefix: Characters/NPC1
+      guid: 0e49176b6bc1fee4384573bf7e73a379
+    - name: NPC1_Smile
+      pathPrefix: Characters/NPC1
+      guid: cc936adf381a20e4c807afcc2cae4f57
+    - name: NPC1_Angry
+      pathPrefix: Characters/NPC1
+      guid: 8f8e6fe2f2ef256438e8242887515394
+    - name: NPC1_Angry_v2
+      pathPrefix: Characters/NPC1
+      guid: 3e416c74957a5cf42b59045211152445
+  - Id: Characters/f4c19eee-47d6-4879-8008-4f4f09a031ac
+    Resources:
+    - name: NPC2_Idle
+      pathPrefix: Characters/NPC2
+      guid: f7b4404b2eb6e3945845d3af0bc78f64
+    - name: NPC2_Idle_Sit
+      pathPrefix: Characters/NPC2
+      guid: fd60646afe955584cb580e133396016a
+    - name: NPC2_Angry
+      pathPrefix: Characters/NPC2
+      guid: 02922e412f6299a48a429c34d99dfeb2
+    - name: NPC2_Angry_Sit
+      pathPrefix: Characters/NPC2
+      guid: 1549ae111fa9cf8459b2893cc8325042
+    - name: NPC2_Smile
+      pathPrefix: Characters/NPC2
+      guid: c7670262b90427241aeed5fd8087a70d
+  - Id: CharacterAvatars
+    Resources: []
+  - Id: Characters/79a94542-1399-4e08-8e25-59cd97ea9874
+    Resources: []
