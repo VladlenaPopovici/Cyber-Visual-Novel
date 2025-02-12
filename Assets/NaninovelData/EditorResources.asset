@@ -144,6 +144,12 @@ MonoBehaviour:
     - name: ScriptNavigatorUI
       pathPrefix: UI
       guid: 735d6aa767879aa469134858c5b2f0a7
+    - name: quest
+      pathPrefix: UI
+      guid: d8d85aa9e087dae44af18b16293fe3ca
+    - name: map
+      pathPrefix: UI
+      guid: a203f3459138e77438393779146d3caf
   - Id: Scripts
     Resources:
     - name: GameScript
@@ -165,10 +171,10 @@ MonoBehaviour:
       guid: de68be7b89abdb8429bc3f3067fa918b
     - name: Location2
       pathPrefix: Backgrounds/MainBackground
-      guid: 425620c7995d9d5498601f1e57a6f25f
+      guid: ad6669b8f9183a345923c6f1da704c1c
     - name: Location3
       pathPrefix: Backgrounds/MainBackground
-      guid: 2ed99c856fa6247489d7c7cad0d065b5
+      guid: 0490fc64be80bc049aec3dfd8b5ee57c
     - name: alley-17
       pathPrefix: Backgrounds/MainBackground
       guid: 04cce16c8a0c9a846918befba7794f0f
@@ -209,4 +215,11 @@ MonoBehaviour:
   - Id: CharacterAvatars
     Resources: []
   - Id: Characters/79a94542-1399-4e08-8e25-59cd97ea9874
+    Resources: []
+  - Id: Characters/ba8c7612-f3cf-4e85-b337-ae2402236edf
+    Resources:
+    - name: Icon
+      pathPrefix: Characters/Artifact
+      guid: 0fc006c292e95b2499dc5196816f4050
+  - Id: Unlockables
     Resources: []

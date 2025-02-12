@@ -1,4 +1,5 @@
-
+@hideUI quest
+@hideUI map
 @back alley-17
 @char NPC2 pos:80,-50 scale:1.2 time:0
 @char NPC1 pos:20,0 time:0

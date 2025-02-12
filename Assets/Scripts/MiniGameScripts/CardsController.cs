@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Naninovel;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -24,6 +25,14 @@ namespace MiniGameScripts
         {
             PrepareSprites();
             CreateCards();
+        }
+        
+        public async UniTask OnGameComplete()
+        {
+            while (!winScreen.activeSelf)
+            {
+                await UniTask.Yield();
+            }
         }
 
         public void SetSelected(Card card)
@@ -57,8 +66,9 @@ namespace MiniGameScripts
                 if (matchCounts >= spritePairs.Count / 2)
                 {
                     gridLayout.gameObject.SetActive(false);
-                    yield return new WaitForSeconds(0.3f);
+                    yield return new WaitForSeconds(1f);
                     winScreen.SetActive(true);
+                    yield return new WaitForSecondsRealtime(2f);
                 }
             }
             else

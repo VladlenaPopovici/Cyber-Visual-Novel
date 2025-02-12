@@ -1,15 +1,20 @@
-
-
+@hideUI map
+@set questLog=""
 @back CommonBG
 @input PlayerName summary:"Enter your name"
+
 @stop
 @back Location1
+
 @glitch time:1 power:1
 @char NPC1
 NPC1: Hey, {PlayerName}. You look like someone who knows their way around the Glitch. I need your help.
+
+@showUI quest
+@set "questLog=\"Talk to NPC-2 in Location 2.\""
+
 NPC1: There's a rare artifact in the Neon District. Bring it to me, and I'll make it worth your while.
-@set QuestActive=true
-@set QuestStep=1
+
 @despawnAll
 
 @hideAll
@@ -19,46 +24,82 @@ NPC1: There's a rare artifact in the Neon District. Bring it to me, and I'll mak
 @char NPC2 pos:50,-20
 
 NPC2: Oh, you're the one NPC1 sent. She’s always so demanding, isn’t she?!
+@set "questLog=\"Play memory game\""
 NPC2: Before you go, let’s see if you’re sharp enough for this. Play this little game with me.
+
+@minigame
+NPC2: ...
+@glitch time:1 power:1
 NPC2: Not bad. The artifact is in the Abandoned Tower. Be careful, though. It’s not just the Glitch you need to worry about.
-@set QuestStep=2
+@set "questLog=\"Find artifact\""
+
 @despawnAll
 
 @hideAll
 @back Location3
-@set ItemCollected=true
-@set QuestStep=3
-Narrator: You find the artifact glowing faintly in the dark. It feels... alive.
+@glitch time:1 power:1
+@char Artifact.Icon
+@shake Artifact count:0
+@set "questLog=\"Take artifact\""
+@choice "Take item"
+@stop
 
 @back Location2
-@char None
-Narrator: NPC2 is gone. The streets are empty, and the neon lights flicker like a dying heartbeat.
-Narrator: You think about NPC1 and NPC2. Both so different, yet both pulling you in their own way.
-@set QuestStep=4
+Player: NPC2 is gone. The streets are empty, and the neon lights flicker like a dying heartbeat.
+Player: You think about NPC1 and NPC2. Both so different, yet both pulling you in their own way.
 
-
+@set "questLog=\"Make final choice\""
 @back Location1
+@shake Artifact count:-1
 @char NPC1
 NPC1: You’re back. Do you have it?
+@glitch time:1 power:1
+@despawnAll
 
+@hideAll
+@back alley-17
 @choice "Give the artifact to NPC1" goto:.GiveNPC1
 @choice "Give the artifact to NPC2" goto:.GiveNPC2
 @choice "Keep the artifact for yourself" goto:.KeepArtifact
+@stop
+
+
 
 # GiveNPC1
+@back Location1
+@char NPC1.NPC1_Happy
 NPC1: I knew I could count on you, {PlayerName}. You’re one of a kind.
-@set QuestResult="NPC1"
+@char NPC2.NPC2_Angry
+NPC2: It is wrong choice!
+@goto .TheEnd
 @stop
 
 # GiveNPC2
-@char NPC2
+@back Location2
+@char NPC2.NPC2_Smile
 NPC2: You chose me? I’m... touched. Maybe there’s more to you than I thought.
-@set QuestResult="NPC2"
+@char NPC1.NPC1_Angry
+NPC1: It is wrong choice!
+@goto .TheEnd
 @stop
 
 # KeepArtifact
+@back Location3
 Narrator: You decide to keep the artifact. Its glow intensifies, and you feel a strange connection to it.
+@char NPC1.NPC1_Angry
 NPC1: You’re making a mistake, {PlayerName}.
+@char NPC2.NPC2_Angry
 NPC2: I hope you know what you’re doing.
-@set QuestResult="None"
+@goto .TheEnd
+@stop
+
+# TheEnd
+@set questLog=""
+@despawnAll
+
+@hideAll
+@hideUI quest
+@back Location1
+@glitch time:1 power:1
+@showUI map
 @stop
