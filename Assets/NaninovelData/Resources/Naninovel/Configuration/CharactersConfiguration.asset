@@ -67,7 +67,7 @@ MonoBehaviour:
     ids:
     - NPC1
     - NPC2
-    - '{PlayerName}'
+    - Player
     metas:
     - Implementation: Naninovel.SpriteCharacter, Elringus.Naninovel.Runtime, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null

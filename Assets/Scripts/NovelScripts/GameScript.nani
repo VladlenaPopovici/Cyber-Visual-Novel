@@ -6,19 +6,59 @@
 @back Location1
 @glitch time:1 power:1
 @char NPC1
-NPC1: Woooow! Hi, {PlayerName}, right?
-
+NPC1: Hey, {PlayerName}. You look like someone who knows their way around the Glitch. I need your help.
+NPC1: There's a rare artifact in the Neon District. Bring it to me, and I'll make it worth your while.
+@set QuestActive=true
+@set QuestStep=1
 @despawnAll
 
 @hideAll
+
 @back Location2
 @glitch time:1 power:1
 @char NPC2 pos:50,-20
 
-NPC2: Hi, sweet {PlayerName}!
+NPC2: Oh, you're the one NPC1 sent. She’s always so demanding, isn’t she?!
+NPC2: Before you go, let’s see if you’re sharp enough for this. Play this little game with me.
+NPC2: Not bad. The artifact is in the Abandoned Tower. Be careful, though. It’s not just the Glitch you need to worry about.
+@set QuestStep=2
 @despawnAll
 
 @hideAll
 @back Location3
+@set ItemCollected=true
+@set QuestStep=3
+Narrator: You find the artifact glowing faintly in the dark. It feels... alive.
 
-{PlayerName}: Yeah, hard day
+@back Location2
+@char None
+Narrator: NPC2 is gone. The streets are empty, and the neon lights flicker like a dying heartbeat.
+Narrator: You think about NPC1 and NPC2. Both so different, yet both pulling you in their own way.
+@set QuestStep=4
+
+
+@back Location1
+@char NPC1
+NPC1: You’re back. Do you have it?
+
+@choice "Give the artifact to NPC1" goto:.GiveNPC1
+@choice "Give the artifact to NPC2" goto:.GiveNPC2
+@choice "Keep the artifact for yourself" goto:.KeepArtifact
+
+# GiveNPC1
+NPC1: I knew I could count on you, {PlayerName}. You’re one of a kind.
+@set QuestResult="NPC1"
+@stop
+
+# GiveNPC2
+@char NPC2
+NPC2: You chose me? I’m... touched. Maybe there’s more to you than I thought.
+@set QuestResult="NPC2"
+@stop
+
+# KeepArtifact
+Narrator: You decide to keep the artifact. Its glow intensifies, and you feel a strange connection to it.
+NPC1: You’re making a mistake, {PlayerName}.
+NPC2: I hope you know what you’re doing.
+@set QuestResult="None"
+@stop
